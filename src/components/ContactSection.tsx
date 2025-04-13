@@ -95,11 +95,12 @@ const ContactSection = () => {
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-          <div className="space-y-8">
-            <div className="glass-card p-8 rounded-lg">
-              <div className="flex flex-col items-center md:items-start space-y-8">
+          {/* Left side - Contact Info */}
+          <div>
+            <div className="glass-card p-8 rounded-lg mb-8">
+              <div className="flex flex-col space-y-8">
                 {/* Email Card */}
-                <div className="w-full glass-card p-6 rounded-lg hover:border-cyber-neon/30 transition-all duration-300">
+                <div className="glass-card p-6 rounded-lg hover:border-cyber-neon/30 transition-all duration-300">
                   <div className="flex items-center space-x-4">
                     <div className="bg-cyber-purple/20 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-cyber-purple-light" />
@@ -112,7 +113,7 @@ const ContactSection = () => {
                 </div>
                 
                 {/* Phone Card */}
-                <div className="w-full glass-card p-6 rounded-lg hover:border-cyber-neon/30 transition-all duration-300">
+                <div className="glass-card p-6 rounded-lg hover:border-cyber-neon/30 transition-all duration-300">
                   <div className="flex items-center space-x-4">
                     <div className="bg-cyber-blue/20 p-3 rounded-full">
                       <Phone className="h-6 w-6 text-cyber-blue-light" />
@@ -123,18 +124,19 @@ const ContactSection = () => {
                     </div>
                   </div>
                 </div>
-                
-                {/* Data-Driven Section */}
-                <div className="w-full p-6 rounded-lg">
-                  <h3 className="text-2xl font-bold text-white mb-3">DATA-DRIVEN</h3>
-                  <p className="text-white/80 leading-relaxed">
-                    Analytics and user insights guide our decision-making process at every step.
-                  </p>
-                </div>
               </div>
+            </div>
+            
+            {/* Data-Driven Section - Moved outside the card */}
+            <div className="p-6 rounded-lg">
+              <h3 className="text-2xl font-bold text-white mb-3">DATA-DRIVEN</h3>
+              <p className="text-white/80 leading-relaxed">
+                Analytics and user insights guide our decision-making process at every step.
+              </p>
             </div>
           </div>
           
+          {/* Right side - Contact Form */}
           <form 
             ref={formRef}
             onSubmit={handleSubmit}
