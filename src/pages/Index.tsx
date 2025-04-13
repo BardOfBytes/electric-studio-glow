@@ -7,9 +7,6 @@ import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
-// Ensure these dependencies are installed
-<lov-add-dependency>framer-motion@latest</lov-add-dependency>
-
 const Index = () => {
   // Initialize smooth scrolling and parallax effects
   useEffect(() => {

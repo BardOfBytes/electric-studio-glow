@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
 import { Mail, Phone, Send } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -87,39 +88,50 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <h2 
           ref={titleRef}
-          className="text-3xl md:text-4xl font-bold mb-16 text-center opacity-0 translate-y-10 transition-all duration-700"
+          className="text-5xl md:text-6xl font-bold mb-16 text-center opacity-0 translate-y-10 transition-all duration-700"
         >
           <span className="text-white">GET IN</span>
-          <span className="text-cyber-neon ml-3">TOUCH</span>
+          <span className="text-cyber-purple-light ml-3">TOUCH</span>
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-          <div className="space-y-8 md:mt-8">
-            <div className="glass-card p-6 rounded-lg">
-              <div className="flex items-center space-x-4">
-                <Mail className="h-6 w-6 text-cyber-neon" />
-                <div>
-                  <h3 className="text-white font-medium">Email Us</h3>
-                  <p className="text-white/70">hello@electrostudio.com</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+          <div className="space-y-8">
+            <div className="glass-card p-8 rounded-lg">
+              <div className="flex flex-col items-center md:items-start space-y-8">
+                {/* Email Card */}
+                <div className="w-full glass-card p-6 rounded-lg hover:border-cyber-neon/30 transition-all duration-300">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-cyber-purple/20 p-3 rounded-full">
+                      <Mail className="h-6 w-6 text-cyber-purple-light" />
+                    </div>
+                    <div>
+                      <h3 className="text-white/70 text-sm font-medium uppercase tracking-wider">Email Us</h3>
+                      <p className="text-white font-medium">hello@electrostudio.com</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Phone Card */}
+                <div className="w-full glass-card p-6 rounded-lg hover:border-cyber-neon/30 transition-all duration-300">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-cyber-blue/20 p-3 rounded-full">
+                      <Phone className="h-6 w-6 text-cyber-blue-light" />
+                    </div>
+                    <div>
+                      <h3 className="text-white/70 text-sm font-medium uppercase tracking-wider">Call Us</h3>
+                      <p className="text-white font-medium">+1 (555) 123-4567</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Data-Driven Section */}
+                <div className="w-full p-6 rounded-lg">
+                  <h3 className="text-2xl font-bold text-white mb-3">DATA-DRIVEN</h3>
+                  <p className="text-white/80 leading-relaxed">
+                    Analytics and user insights guide our decision-making process at every step.
+                  </p>
                 </div>
               </div>
-            </div>
-            
-            <div className="glass-card p-6 rounded-lg">
-              <div className="flex items-center space-x-4">
-                <Phone className="h-6 w-6 text-cyber-blue" />
-                <div>
-                  <h3 className="text-white font-medium">Call Us</h3>
-                  <p className="text-white/70">+1 (555) 123-4567</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="p-6">
-              <p className="text-white/80 leading-relaxed">
-                Ready to bring your digital vision to life? Let's collaborate and create something extraordinary together. 
-                Whether you have a specific project in mind or just want to explore possibilities, we're here to help.
-              </p>
             </div>
           </div>
           
